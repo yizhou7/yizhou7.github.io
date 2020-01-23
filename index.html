@@ -16,20 +16,25 @@
 </head>
 
 <script>
-// partially from http://forums.shopify.com/categories/2/posts/29259
+    var getGetOrdinalYear = function () {
+        // partially from http://forums.shopify.com/categories/2/posts/29259
+        var dt = new Date("2019-08-01 12:00:00");
+        var n = Math.ceil((Date.now() - dt) / 31557600000);
+        var s = ["th", "st", "nd", "rd"],
+            v = n % 100;
+        return n + (s[(v - 20) % 10] || s[v] || s[0]) + " year";
+    }
 
-var getGetOrdinalYear = function() {
-    var dt = new Date("2019-08-01 12:00:00");
-    var n = Math.ceil((Date.now() - dt) / 31557600000);
-    var s=["th","st","nd","rd"],
-    v= n%100;
-    return n+(s[(v-20)%10]||s[v]||s[0])+" year";
-}
+    var writeGetOrdinalYear = function () {
+        document.write(getGetOrdinalYear());
+    }
 
-var writeGetOrdinalYear = function() {
-    document.write(getGetOrdinalYear());
-}
+    function changeImage() {
+        console.log(document.getElementById("picture").src);
+        document.getElementById("picture").src = "./files/ben.jpg";
+    }
 </script>
+
 
 <body>
     <div class="container">
@@ -37,24 +42,37 @@ var writeGetOrdinalYear = function() {
             <div id="name">Yi Zhou </div>
             <hr>
             <div class="col-md-3">
-                <img id="picture" src="./files/selfie-1.jpg">
+                <img onclick="changeImage()" id="picture" src="./files/selfie.jpg">
             </div>
             <div class="col-md-9">
                 <div class="description">
                     <p>
-                        Hello there. I'm Yi (pronounced as the letter "e"). On the left you might see a pictorial representation of my face.
+                        Hello there. I'm Yi (pronounced as the letter "e"). On the left you might see a pictorial
+                        representation of my face (or not).
                     </p>
                     <p>
-                        I'm currently a <script>writeGetOrdinalYear()</script> Ph.D. student at <a href="https://csd.cmu.edu/">CMU</a>, where I have the privilege to have <a href="https://www.andrew.cmu.edu/user/bparno/"> Bryan Parno</a> as my advisor. Prior to that, I received my B.S. and M.S. from <a href="https://cs.illinois.edu/">UIUC</a>, where I was very fortunate to have <a href="http://mdbailey.ece.illinois.edu/"> Michael Bailey</a> as my advisor. 
+                        I'm currently a
+                        <script>writeGetOrdinalYear()</script> Ph.D. student at <a href="https://csd.cmu.edu/">CMU</a>,
+                        where I have the privilege to have <a href="https://www.andrew.cmu.edu/user/bparno/"> Bryan
+                            Parno</a> as my advisor. Prior to that, I received my B.S. and M.S. from <a
+                            href="https://cs.illinois.edu/">UIUC</a>, where I was very fortunate to have <a
+                            href="http://mdbailey.ece.illinois.edu/"> Michael Bailey</a> as my advisor.
                     </p>
                     <p>
-                        My current research interest is mainly in applied formal methods, where we use formal analysis and proofs to ensure the correctness and security of real world software systems. 
+                        My current research interest is mainly in applied formal methods, where we use formal analysis
+                        and proofs to ensure the correctness and security of real world software systems.
+                    </p>
+                    <p id="free">
+                        In my free time, I like to lift weights, though I am quite terrible at it. I also enjoy playing
+                        the electric guitar, but I am not great at that either. 
+                        
+                        <!-- If you like memes, checkout my collection on <a
+                            href="https://www.youtube.com/playlist?list=PLb9_Oz5UVtkt6weoHXJSaLtr5VTP4vU3T"> youtube
+                            </a>. -->
                     </p>
                     <p>
-                        In my free time, I like to lift weights, though I am quite terrible at it. I also enjoy playing the electric guitar, but I am not great at that either. If you like memes, checkout my collection of <a href="https://www.youtube.com/playlist?list=PLb9_Oz5UVtkt6weoHXJSaLtr5VTP4vU3T"> youtube memes</a>.
-                    </p>
-                    <p>
-                        This website template is shamelessly copied from  <a href="https://kumarde.com/">Deepak Kumar</a>. 
+                        This website template is shamelessly copied from <a href="https://kumarde.com/">Deepak
+                            Kumar</a>.
                     </p>
                     <p>
                     </p>
@@ -62,30 +80,30 @@ var writeGetOrdinalYear = function() {
             </div>
         </div>
         <hr>
-        <div class = "row">
-            <div id = "name"> Publications </div>
+        <div class="row">
+            <div id="name"> Publications </div>
             <br>
             <div class="pubs">
                 <u>Yi Zhou</u>, Deepak Kumar, Surya Bakshi, Joshua Mason, Andrew Miller, Michael Bailey.
-                Erays: Reverse Engineering Ethereum's Opaque Smart Contracts. 27th USENIX Security Symposium (USENIX Security '18), 
+                Erays: Reverse Engineering Ethereum's Opaque Smart Contracts. 27th USENIX Security Symposium (USENIX
+                Security '18),
                 Baltimore, Maryland, August 15-17, 2018.
                 <!-- <a target="_blank" href="/papers/yirays.pdf"> [pdf] </a> -->
             </div>
             <br>
             <div class="pubs">
-                Manos Antonakakis, Tim April, Michael Bailey, Matt Bernhard, Elie Bursztein, Jaime Cochran, 
-                Zakir Durumeric, J. Alex Halderman, Luca Invernizzi, 
-                Michalis Kallitsis, Deepak Kumar, Chaz Lever, Zane Ma, Joshua Mason, Damian Menscher, Chad Seaman, 
-                Nick Sullivan, Kurt Thomas, <u>Yi Zhou</u>. Understanding the Mirai Botnet. 
-                In 26th USENIX Security Symposium (USENIX Security '17), Vancouver, Canada, 
-                August 16-18, 2017. 
+                Manos Antonakakis, Tim April, Michael Bailey, Matt Bernhard, Elie Bursztein, Jaime Cochran,
+                Zakir Durumeric, J. Alex Halderman, Luca Invernizzi,
+                Michalis Kallitsis, Deepak Kumar, Chaz Lever, Zane Ma, Joshua Mason, Damian Menscher, Chad Seaman,
+                Nick Sullivan, Kurt Thomas, <u>Yi Zhou</u>. Understanding the Mirai Botnet.
+                In 26th USENIX Security Symposium (USENIX Security '17), Vancouver, Canada,
+                August 16-18, 2017.
                 <!-- <a target="_blank" href="/papers/understanding_mirai.pdf"> [pdf] </a> -->
             </div>
-    <br>
+            <br>
+            <hr>
 
-        <hr>
-
-    </div>
+        </div>
 </body>
 
 </html>
