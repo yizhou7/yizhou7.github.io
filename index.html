@@ -16,11 +16,11 @@
 </head>
 
 <script>
-// found here http://forums.shopify.com/categories/2/posts/29259
+// partially from http://forums.shopify.com/categories/2/posts/29259
 
 var getGetOrdinalYear = function() {
-    var dt = new Date();
-    var n = parseInt(dt.getFullYear()) - 2019;
+    var dt = new Date("2019-08-01 12:00:00");
+    var n = Math.ceil((Date.now() - dt) / 31557600000);
     var s=["th","st","nd","rd"],
     v= n%100;
     return n+(s[(v-20)%10]||s[v]||s[0])+" year";
@@ -45,16 +45,16 @@ var writeGetOrdinalYear = function() {
                         Hello there. I'm Yi (pronounced as the letter "e"). On the left you might see a pictorial representation of my face.
                     </p>
                     <p>
-                        I'm currently a <script>writeGetOrdinalYear()</script> Ph.D. student in the CSD at CMU, where I have the privilege to have Bryan Parno as my advisor. Prior to that, I received my B.S. and M.S. from UIUC, where I was very fortunate to have Michael Bailey as my advisor. 
+                        I'm currently a <script>writeGetOrdinalYear()</script> Ph.D. student in the CSD at CMU, where I have the privilege to have <a href="https://www.andrew.cmu.edu/user/bparno/"> Bryan Parno</a> as my advisor. Prior to that, I received my B.S. and M.S. from UIUC, where I was very fortunate to have <a href="http://mdbailey.ece.illinois.edu/"> Michael Bailey</a> as my advisor. 
                     </p>
                     <p>
-                        My research interest is mainly in applied formal methods, where we perform formal analysis and proofs on real systems to ensure the correctness and security. 
+                        My current research interest is mainly in applied formal methods, where we use formal analysis and proofs to ensure the correctness and security of real world software systems. 
                     </p>
                     <p>
-                        In my free time, I like to lift weights, though I am quite terrible at it. I also enjoy playing the electric guitar, but I am not great at that either. If you like memes, checkout my collection of youtube memes here. </a>
+                        In my free time, I like to lift weights, though I am quite terrible at it. I also enjoy playing the electric guitar, but I am not great at that either. If you like memes, checkout my collection of <a href="https://www.youtube.com/playlist?list=PLb9_Oz5UVtkt6weoHXJSaLtr5VTP4vU3T"> youtube memes</a>.
                     </p>
                     <p>
-                        This website template is shamelessly copied from Deepak Kumar. 
+                        This website template is shamelessly copied from  <a href="https://kumarde.com/">Deepak Kumar</a>. 
                     </p>
                     <p>
                     </p>
