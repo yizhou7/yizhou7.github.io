@@ -21,7 +21,10 @@
         var dt = new Date("2019-08-01 12:00:00");
         var n = Math.ceil((Date.now() - dt) / 31557600000);
         var s = ["th", "st", "nd", "rd"],
-            v = n % 100;
+        v = n % 100;
+        if (isNaN(n)) { // could be NaN on mobile for some reason?
+            return "";
+        }
         return n + (s[(v - 20) % 10] || s[v] || s[0]) + " year";
     }
 
@@ -55,7 +58,7 @@
                         <script>writeGetOrdinalYear()</script> Ph.D. student at <a href="https://csd.cmu.edu/">CMU</a>,
                         where I have the privilege to have <a href="https://www.andrew.cmu.edu/user/bparno/"> Bryan
                             Parno</a> as my advisor. Prior to that, I received my B.S. and M.S. from <a
-                            href="https://cs.illinois.edu/">UIUC</a>, where I was very fortunate to have <a
+                            href="https://cs.illinois.edu/">UIUC</a>, where I was fortunate to have <a
                             href="http://mdbailey.ece.illinois.edu/"> Michael Bailey</a> as my advisor.
                     </p>
                     <p>
@@ -64,8 +67,8 @@
                     </p>
                     <p id="free">
                         In my free time, I like to lift weights, though I am quite terrible at it. I also enjoy playing
-                        the electric guitar, but I am not great at that either. 
-                        
+                        the electric guitar, but I am not great at that either.
+
                         <!-- If you like memes, checkout my collection on <a
                             href="https://www.youtube.com/playlist?list=PLb9_Oz5UVtkt6weoHXJSaLtr5VTP4vU3T"> youtube
                             </a>. -->
