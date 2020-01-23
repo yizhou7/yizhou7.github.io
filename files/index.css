@@ -1,0 +1,30 @@
+body{
+    font-family: 'Lato', sans-serif;
+    font-weight:300;
+}
+
+#name{
+    font-size: 3em;
+}
+
+.description{
+    font-size: 1.5em;
+}
+
+.container{
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+#picture{
+    width: 100%;
+}
+
+#header{
+    font-size: 2em;
+}
+
+.pubs{
+    font-size: 1.25em;
+}
