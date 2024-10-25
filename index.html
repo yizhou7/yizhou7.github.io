@@ -16,22 +16,6 @@
 </head>
 
 <script>
-    var getGetOrdinalYear = function () {
-        // partially from http://forums.shopify.com/categories/2/posts/29259
-        var dt = new Date("2019-08-01 12:00:00");
-        var n = Math.ceil((Date.now() - dt) / 31557600000);
-        var s = ["th", "st", "nd", "rd"],
-        v = n % 100;
-        if (isNaN(n)) { // could be NaN on mobile for some reason?
-            return "";
-        }
-        return n + (s[(v - 20) % 10] || s[v] || s[0]) + " year";
-    }
-
-    var writeGetOrdinalYear = function () {
-        document.write(getGetOrdinalYear());
-    }
-
     function changeImage() {
         console.log(document.getElementById("picture").src);
         document.getElementById("picture").src = "./files/ben.jpg";
@@ -49,7 +33,7 @@
                 <p>
                     <br>
                     Email: <br>
-                    yizhou5 [at] andrew [dot] cmu [dot] edu <br> 
+                    yeet [at] cmu [dot] edu <br> 
                     <br> 
                     Office:  <br>
                     2128D, CIC, 4720 Forbes Ave, Pittsburgh PA 15213
